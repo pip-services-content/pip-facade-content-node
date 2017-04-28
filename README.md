@@ -3,11 +3,12 @@
 This module contains REST operations for [Client Facade](github.com:pip-services/pip-services-facade-node.git).
 Using these operations developers are able to create facades and fill them with pre-built REST operations for:
 
-* Trace and error logging
-* System event logging
-* Performance counters
-* Statistical counters
-* Blob storage
+* Files
+* User guides
+* User tips
+* Inspirational quotes
+* Search tags
+* Image sets
 
 <a name="links"></a> Quick Links:
 
@@ -23,7 +24,7 @@ Add dependency to the facade and operations into **package.json** file of your p
     "dependencies": {
         ....
         "pip-services-facade-node": "^1.0.*",
-        "pip-facade-infrastructure-node": "^1.0.*",
+        "pip-facade-content-node": "^1.0.*",
         ...
     }
 }
@@ -51,15 +52,17 @@ export class MyFacadeServiceV1 extends MainFacadeService {
 
 Get or create operations and register routes in the facade service
 ```typescript
-import { LoggingOperations } from 'pip-facade-infrastructure-node';
+import { FilesOperations } from 'pip-facade-content-node';
 
 export class MyFacadeServiceV1 extends MainFacadeService {
 
     public register() {
-        let logging = new LoggingOperations();
-        this.registerRoute('get', '/logging', logging.getMessagesOperation());
-        this.registerRoute('get', '/logging/errors', logging.getErrorsOperation());
-        this.registerRoute('del', '/logging', logging.clearMessagesOperation());
+        let files = new FilesOperations();
+        this.registerRoute('get', '/files', logging.getFilesOperation());
+        this.registerRoute('get', '/files/:file_id', logging.getFileOperation());
+        this.registerRoute('post', '/files', logging.createFileOperation());
+        this.registerRoute('update', '/files/:file_id', logging.updateFileOperation());
+        this.registerRoute('del', '/file/:file_id', logging.deleteFileOperation());
     }
 
 }
@@ -75,15 +78,15 @@ myFacade.configure(ConfigParams.fromTuples(
     'connection.port', 8080
 ));
 
-let loggingClient = new LoggingHttpClientV1();
-loggingClient.configure(ConfigParams.fromTuples(
+let filesClient = new FilesHttpClientV1();
+filesClient.configure(ConfigParams.fromTuples(
     'connection.protocol', 'http',
     'connection.host', 'localhost',
     'connection.port', 8082
 ));
 
 let references = References.fromTuples(
-    new Descriptor('pip-services-logging', 'client', 'http', 'default', '1.0'), loggingClient
+    new Descriptor('pip-services-files', 'client', 'http', 'default', '1.0'), filesClient
 );
 myFacade.setReferences(references)
 
@@ -97,7 +100,7 @@ Alternatively to manual instantiation and cross-referencing you can use Pip.Serv
 and instantiate the whole facade using simple configuration:
 ```yaml
 ---
--descriptor: pip-services-logging:client:http:default:1.0
+-descriptor: pip-services-files:client:http:default:1.0
  connection:
    protocol: http
    host: localhost
