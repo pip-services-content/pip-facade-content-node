@@ -1,0 +1,104 @@
+---
+# Container info
+- descriptor: "pip-services-container:container-info:default:default:*"
+  name: "pip-vault-us1-alpha"
+  description: "Client facade for Pip.Vault US1"
+
+# Console logger
+- descriptor: "pip-services-commons:logger:console:default:*"
+  level: trace
+
+# Log counters
+- descriptor: "pip-services-commons:counters:log:default:*"
+
+# Discovery service
+- descriptor: "pip-services-commons:discovery:memory:default:*"
+  mongodb: uri=mongodb://localhost/test
+
+# Credential store
+- descriptor: "pip-services-commons:credential-store:memory:default:*"
+  mongodb: username=;password=
+
+########### Content management components ###########
+
+# Tags components
+- descriptor: "pip-services-tags:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-tags:controller:default:default:*"
+- descriptor: "pip-services-tags:client:direct:default:*"
+
+# Quotes components
+- descriptor: "pip-services-quotes:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-quotes:controller:default:default:*"
+- descriptor: "pip-services-quotes:client:direct:default:*"
+
+# Blobs components
+- descriptor: "pip-services-blobs:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-blobs:controller:default:default:*"
+- descriptor: "pip-services-blobs:client:direct:default:*"
+
+# Attachments components
+- descriptor: "pip-services-attachments:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-attachments:controller:default:default:*"
+- descriptor: "pip-services-attachments:client:direct:default:*"
+
+# Files components
+- descriptor: "pip-services-files:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-files:controller:default:default:*"
+- descriptor: "pip-services-files:client:direct:default:*"
+
+# Image Sets components
+- descriptor: "pip-services-imagesets:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-imagesets:controller:default:default:*"
+- descriptor: "pip-services-imagesets:client:direct:default:*"
+
+# Tips components
+- descriptor: "pip-services-tips:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-tips:controller:default:default:*"
+- descriptor: "pip-services-tips:client:direct:default:*"
+
+# Guides components
+- descriptor: "pip-services-guides:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-guides:controller:default:default:*"
+- descriptor: "pip-services-guides:client:direct:default:*"
+
+################ REST API Routes ##############
+
+# Main facade service
+- descriptor: "pip-services-facade:service:main:default:*"
+  root_path: ""
+  connection:
+    protocol: "http"
+    host: "0.0.0.0"
+    port: 8080
+  options:
+    debug: true
+    maintenance_enabled: false
+    max_req_size: "1mb"
+
+# Version 1 facade service
+- descriptor: "pip-services-facade:service:test:api-1.0:*"
+  root_path: "/api/1.0"
+
+# Pip.Services Operations
+- descriptor: "pip-facade-content:operations:tags:default:1.0"
+- descriptor: "pip-facade-content:operations:quotes:default:1.0"
+- descriptor: "pip-facade-content:operations:tips:default:1.0"
+- descriptor: "pip-facade-content:operations:guides:default:1.0"
+- descriptor: "pip-facade-content:operations:imagesets:default:1.0"
+- descriptor: "pip-facade-content:operations:files:default:1.0"

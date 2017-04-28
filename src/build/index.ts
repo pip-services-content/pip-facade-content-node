@@ -1,0 +1,1 @@
+export { ContentFacadeFactory } from './ContentFacadeFactory';
