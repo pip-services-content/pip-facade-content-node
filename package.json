@@ -44,7 +44,8 @@
         "pip-clients-tips-node": "git+ssh://git@github.com:pip-services-content/pip-clients-tips-node.git",
         "pip-clients-guides-node": "git+ssh://git@github.com:pip-services-content/pip-clients-guides-node.git",
         "pip-clients-imagesets-node": "git+ssh://git@github.com:pip-services-content/pip-clients-imagesets-node.git",
-        "pip-clients-files-node": "git+ssh://git@github.com:pip-services-content/pip-clients-files-node.git"
+        "pip-clients-files-node": "git+ssh://git@github.com:pip-services-content/pip-clients-files-node.git",
+        "pip-clients-emailtemplates-node": "git+ssh://git@github.com:pip-services-content/pip-clients-emailtemplates-node.git"
     },
     "devDependencies": {
         "@types/node": "*",
@@ -63,6 +64,7 @@
         "pip-services-tips-node": "git+ssh://git@github.com:pip-services-content/pip-services-tips-node.git",
         "pip-services-guides-node": "git+ssh://git@github.com:pip-services-content/pip-services-guides-node.git",
         "pip-services-imagesets-node": "git+ssh://git@github.com:pip-services-content/pip-services-imagesets-node.git",
-        "pip-services-files-node": "git+ssh://git@github.com:pip-services-content/pip-services-files-node.git"
+        "pip-services-files-node": "git+ssh://git@github.com:pip-services-content/pip-services-files-node.git",
+        "pip-services-emailtemplates-node": "git+ssh://git@github.com:pip-services-content/pip-services-emailtemplates-node.git"
     }
 }

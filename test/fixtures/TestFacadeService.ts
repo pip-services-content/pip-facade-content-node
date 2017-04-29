@@ -7,6 +7,7 @@ import { TipsOperationsV1 } from '../../src/operations/version1/TipsOperationsV1
 import { GuidesOperationsV1 } from '../../src/operations/version1/GuidesOperationsV1';
 import { ImageSetsOperationsV1 } from '../../src/operations/version1/ImageSetsOperationsV1';
 import { FilesOperationsV1 } from '../../src/operations/version1/FilesOperationsV1';
+import { EmailTemplatesOperationsV1 } from '../../src/operations/version1/EmailTemplatesOperationsV1';
 
 export class TestFacadeService extends PartitionFacadeService {
 
@@ -19,6 +20,7 @@ export class TestFacadeService extends PartitionFacadeService {
         this._dependencyResolver.put('guides', new Descriptor("pip-facade-content", "operations", "guides", "*", "1.0"));
         this._dependencyResolver.put('imagesets', new Descriptor("pip-facade-content", "operations", "imagesets", "*", "1.0"));
         this._dependencyResolver.put('files', new Descriptor("pip-facade-content", "operations", "files", "*", "1.0"));
+        this._dependencyResolver.put('emailtemplates', new Descriptor("pip-facade-content", "operations", "emailtemplates", "*", "1.0"));
     }
 
     protected register(): void {
@@ -75,6 +77,16 @@ export class TestFacadeService extends PartitionFacadeService {
             this.registerRoute('post', '/files', files.createFileOperation());
             this.registerRoute('put', '/files/:file_id', files.updateFileOperation());
             this.registerRoute('del', '/files/:file_id', files.deleteFileOperation());
+        }
+
+        let emailTemplates = this._dependencyResolver.getOneOptional<EmailTemplatesOperationsV1>('emailtemplates');
+        if (emailTemplates) {
+            this.registerRoute('get', '/email_templates', emailTemplates.getTemplatesOperation());
+            this.registerRoute('get', '/email_templates/find', emailTemplates.findTemplateOperation());
+            this.registerRoute('get', '/email_templates/:template_id', emailTemplates.getTemplateOperation());
+            this.registerRoute('post', '/email_templates', emailTemplates.createTemplateOperation());
+            this.registerRoute('put', '/email_templates/:template_id', emailTemplates.updateTemplateOperation());
+            this.registerRoute('del', '/email_templates/:template_id', emailTemplates.deleteTemplateOperation());
         }
     }
 
