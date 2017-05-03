@@ -26,6 +26,12 @@ export class FilesOperationsV1  extends FacadeOperations {
         this._filesClient = this._dependencyResolver.getOneRequired<IFilesClientV1>('files');
     }
 
+    public getFileGroupsOperation() {
+        return (req, res) => {
+            this.getFileGroups(req, res);
+        }
+    }
+
     public getFilesOperation() {
         return (req, res) => {
             this.getFiles(req, res);
@@ -54,6 +60,14 @@ export class FilesOperationsV1  extends FacadeOperations {
         return (req, res) => {
             this.deleteFile(req, res);
         }
+    }
+
+    private getFileGroups(req: any, res: any): void {
+        let paging = this.getPagingParams(req);
+
+        this._filesClient.getGroups(
+            null, paging, this.sendResult(req, res)
+        );
     }
 
     private getFiles(req: any, res: any): void {

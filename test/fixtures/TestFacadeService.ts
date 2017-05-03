@@ -73,6 +73,7 @@ export class TestFacadeService extends PartitionFacadeService {
         let files = this._dependencyResolver.getOneOptional<FilesOperationsV1>('files');
         if (files) {
             this.registerRoute('get', '/files', files.getFilesOperation());
+            this.registerRoute('get', '/files/groups', files.getFileGroupsOperation());
             this.registerRoute('get', '/files/:file_id', files.getFileOperation());
             this.registerRoute('post', '/files', files.createFileOperation());
             this.registerRoute('put', '/files/:file_id', files.updateFileOperation());

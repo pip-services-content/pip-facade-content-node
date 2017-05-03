@@ -37,4 +37,17 @@ suite('FilesOperationsV1', () => {
         );
     });
 
+    test('should get file groups', (done) => {
+        rest.get(
+            '/api/1.0/files/groups?paging=1&skip=0&take=2',
+            (err, req, res, page) => {
+                assert.isNull(err);
+
+                assert.isObject(page);
+
+                done();
+            }
+        );
+    });
+
 });

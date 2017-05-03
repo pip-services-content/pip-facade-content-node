@@ -13,6 +13,11 @@ class FilesOperationsV1 extends pip_services_facade_node_1.FacadeOperations {
         super.setReferences(references);
         this._filesClient = this._dependencyResolver.getOneRequired('files');
     }
+    getFileGroupsOperation() {
+        return (req, res) => {
+            this.getFileGroups(req, res);
+        };
+    }
     getFilesOperation() {
         return (req, res) => {
             this.getFiles(req, res);
@@ -37,6 +42,10 @@ class FilesOperationsV1 extends pip_services_facade_node_1.FacadeOperations {
         return (req, res) => {
             this.deleteFile(req, res);
         };
+    }
+    getFileGroups(req, res) {
+        let paging = this.getPagingParams(req);
+        this._filesClient.getGroups(null, paging, this.sendResult(req, res));
     }
     getFiles(req, res) {
         let filter = this.getFilterParams(req);
