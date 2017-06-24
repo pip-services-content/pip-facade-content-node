@@ -13,7 +13,7 @@
 
 # Discovery service
 - descriptor: "pip-services-commons:discovery:memory:default:*"
-  mongodb: uri=mongodb://localhost/test
+  mongodb: uri=mongodb://dls:0SJScEQ1js9cHC5K@pip-devs-test-shard-00-00-qlytb.mongodb.net:27017,pip-devs-test-shard-00-01-qlytb.mongodb.net:27017,pip-devs-test-shard-00-02-qlytb.mongodb.net:27017/test?ssl=true&replicaSet=pip-devs-test-shard-0&authSource=admin&readPreference=secondary
 
 # Credential store
 - descriptor: "pip-services-commons:credential-store:memory:default:*"
@@ -34,13 +34,6 @@
     discovery_key: mongodb
 - descriptor: "pip-services-quotes:controller:default:default:*"
 - descriptor: "pip-services-quotes:client:direct:default:*"
-
-# Blobs components
-- descriptor: "pip-services-blobs:persistence:mongodb:default:*"
-  connection:
-    discovery_key: mongodb
-- descriptor: "pip-services-blobs:controller:default:default:*"
-- descriptor: "pip-services-blobs:client:direct:default:*"
 
 # Attachments components
 - descriptor: "pip-services-attachments:persistence:mongodb:default:*"
@@ -77,6 +70,13 @@
 - descriptor: "pip-services-guides:controller:default:default:*"
 - descriptor: "pip-services-guides:client:direct:default:*"
 
+# Dashboards components
+- descriptor: "pip-services-dashboards:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-dashboards:controller:default:default:*"
+- descriptor: "pip-services-dashboards:client:direct:default:*"
+
 ################ REST API Routes ##############
 
 # Main facade service
@@ -95,10 +95,10 @@
 - descriptor: "pip-services-facade:service:test:api-1.0:*"
   root_path: "/api/1.0"
 
-# Pip.Services Operations
 - descriptor: "pip-facade-content:operations:tags:default:1.0"
 - descriptor: "pip-facade-content:operations:quotes:default:1.0"
 - descriptor: "pip-facade-content:operations:tips:default:1.0"
 - descriptor: "pip-facade-content:operations:guides:default:1.0"
 - descriptor: "pip-facade-content:operations:imagesets:default:1.0"
 - descriptor: "pip-facade-content:operations:files:default:1.0"
+- descriptor: "pip-facade-content:operations:dashboards:default:1.0"

@@ -5,3 +5,4 @@ export { TipsOperationsV1 } from './TipsOperationsV1';
 export { GuidesOperationsV1 } from './GuidesOperationsV1';
 export { ImageSetsOperationsV1 } from './ImageSetsOperationsV1';
 export { EmailTemplatesOperationsV1 } from './EmailTemplatesOperationsV1';
+export { DashboardsOperationsV1 } from './DashboardsOperationsV1';

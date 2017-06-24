@@ -14,6 +14,8 @@ import { TipsServiceFactory } from 'pip-services-tips-node';
 import { TipsClientFactory } from 'pip-clients-tips-node';
 import { GuidesServiceFactory } from 'pip-services-guides-node';
 import { GuidesClientFactory } from 'pip-clients-guides-node';
+import { DashboardsServiceFactory } from 'pip-services-dashboards-node';
+import { DashboardsClientFactory } from 'pip-clients-dashboards-node';
 import { ImageSetsServiceFactory } from 'pip-services-imagesets-node';
 import { ImageSetsClientFactory } from 'pip-clients-imagesets-node';
 
@@ -43,6 +45,8 @@ export class TestFactory extends DefaultContainerFactory {
         this.add(new GuidesClientFactory);
         this.add(new ImageSetsServiceFactory);
         this.add(new ImageSetsClientFactory);
+        this.add(new DashboardsServiceFactory);
+        this.add(new DashboardsClientFactory);
     }
 
 }

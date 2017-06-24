@@ -8,6 +8,7 @@ import { GuidesOperationsV1 } from '../../src/operations/version1/GuidesOperatio
 import { ImageSetsOperationsV1 } from '../../src/operations/version1/ImageSetsOperationsV1';
 import { FilesOperationsV1 } from '../../src/operations/version1/FilesOperationsV1';
 import { EmailTemplatesOperationsV1 } from '../../src/operations/version1/EmailTemplatesOperationsV1';
+import { DashboardsOperationsV1 } from '../../src/operations/version1/DashboardsOperationsV1';
 
 export class TestFacadeService extends PartitionFacadeService {
 
@@ -21,6 +22,7 @@ export class TestFacadeService extends PartitionFacadeService {
         this._dependencyResolver.put('imagesets', new Descriptor("pip-facade-content", "operations", "imagesets", "*", "1.0"));
         this._dependencyResolver.put('files', new Descriptor("pip-facade-content", "operations", "files", "*", "1.0"));
         this._dependencyResolver.put('emailtemplates', new Descriptor("pip-facade-content", "operations", "emailtemplates", "*", "1.0"));
+        this._dependencyResolver.put('dashboards', new Descriptor("pip-facade-content", "operations", "dashboards", "*", "1.0"));
     }
 
     protected register(): void {
@@ -88,6 +90,14 @@ export class TestFacadeService extends PartitionFacadeService {
             this.registerRoute('post', '/email_templates', emailTemplates.createTemplateOperation());
             this.registerRoute('put', '/email_templates/:template_id', emailTemplates.updateTemplateOperation());
             this.registerRoute('del', '/email_templates/:template_id', emailTemplates.deleteTemplateOperation());
+        }
+
+        let dashboards = this._dependencyResolver.getOneOptional<DashboardsOperationsV1>('dashboards');
+        if (dashboards) {
+            this.registerRoute('get', '/dashboards', dashboards.getDashboardsOperation());
+            this.registerRoute('get', '/dashboards/:user_id/:app/:kind', dashboards.getDashboardOperation());
+            this.registerRoute('post', '/dashboards/:user_id/:app/:kind', dashboards.setDashboardOperation());
+            this.registerRoute('del', '/dashboards', dashboards.deleteDashboardsOperation());
         }
     }
 

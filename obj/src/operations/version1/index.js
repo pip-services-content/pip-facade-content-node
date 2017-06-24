@@ -14,4 +14,6 @@ var ImageSetsOperationsV1_1 = require("./ImageSetsOperationsV1");
 exports.ImageSetsOperationsV1 = ImageSetsOperationsV1_1.ImageSetsOperationsV1;
 var EmailTemplatesOperationsV1_1 = require("./EmailTemplatesOperationsV1");
 exports.EmailTemplatesOperationsV1 = EmailTemplatesOperationsV1_1.EmailTemplatesOperationsV1;
+var DashboardsOperationsV1_1 = require("./DashboardsOperationsV1");
+exports.DashboardsOperationsV1 = DashboardsOperationsV1_1.DashboardsOperationsV1;
 //# sourceMappingURL=index.js.map

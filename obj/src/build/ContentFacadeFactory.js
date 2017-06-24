@@ -8,6 +8,7 @@ const TipsOperationsV1_1 = require("../operations/version1/TipsOperationsV1");
 const GuidesOperationsV1_1 = require("../operations/version1/GuidesOperationsV1");
 const ImageSetsOperationsV1_1 = require("../operations/version1/ImageSetsOperationsV1");
 const FilesOperationsV1_1 = require("../operations/version1/FilesOperationsV1");
+const DashboardsOperationsV1_1 = require("../operations/version1/DashboardsOperationsV1");
 class ContentFacadeFactory extends pip_services_commons_node_1.Factory {
     constructor() {
         super();
@@ -17,6 +18,7 @@ class ContentFacadeFactory extends pip_services_commons_node_1.Factory {
         this.registerAsType(ContentFacadeFactory.GuidesOperationsV1Descriptor, GuidesOperationsV1_1.GuidesOperationsV1);
         this.registerAsType(ContentFacadeFactory.ImageSetsOperationsV1Descriptor, ImageSetsOperationsV1_1.ImageSetsOperationsV1);
         this.registerAsType(ContentFacadeFactory.FilesOperationsV1Descriptor, FilesOperationsV1_1.FilesOperationsV1);
+        this.registerAsType(ContentFacadeFactory.DashboardsOperationsV1Descriptor, DashboardsOperationsV1_1.DashboardsOperationsV1);
     }
 }
 ContentFacadeFactory.Descriptor = new pip_services_commons_node_2.Descriptor("pip-facade-content", "factory", "default", "default", "1.0");
@@ -26,5 +28,6 @@ ContentFacadeFactory.TipsOperationsV1Descriptor = new pip_services_commons_node_
 ContentFacadeFactory.GuidesOperationsV1Descriptor = new pip_services_commons_node_2.Descriptor("pip-facade-content", "operations", "guides", "*", "1.0");
 ContentFacadeFactory.ImageSetsOperationsV1Descriptor = new pip_services_commons_node_2.Descriptor("pip-facade-content", "operations", "imagesets", "*", "1.0");
 ContentFacadeFactory.FilesOperationsV1Descriptor = new pip_services_commons_node_2.Descriptor("pip-facade-content", "operations", "files", "*", "1.0");
+ContentFacadeFactory.DashboardsOperationsV1Descriptor = new pip_services_commons_node_2.Descriptor("pip-facade-content", "operations", "dashboards", "*", "1.0");
 exports.ContentFacadeFactory = ContentFacadeFactory;
 //# sourceMappingURL=ContentFacadeFactory.js.map

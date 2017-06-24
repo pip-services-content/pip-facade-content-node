@@ -8,5 +8,6 @@ export declare class ContentFacadeFactory extends Factory {
     static GuidesOperationsV1Descriptor: Descriptor;
     static ImageSetsOperationsV1Descriptor: Descriptor;
     static FilesOperationsV1Descriptor: Descriptor;
+    static DashboardsOperationsV1Descriptor: Descriptor;
     constructor();
 }

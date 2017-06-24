@@ -49,6 +49,9 @@ export class TestReferences extends ManagedReferences {
         this.append(new Descriptor('pip-services-imagesets', 'persistence', 'memory', 'default', '*'));
         this.append(new Descriptor('pip-services-imagesets', 'controller', 'default', 'default', '*'));
         this.append(new Descriptor('pip-services-imagesets', 'client', 'direct', 'default', '*'));
+        this.append(new Descriptor('pip-services-dashboards', 'persistence', 'memory', 'default', '*'));
+        this.append(new Descriptor('pip-services-dashboards', 'controller', 'default', 'default', '*'));
+        this.append(new Descriptor('pip-services-dashboards', 'client', 'direct', 'default', '*'));
     }
 
     private appendFacade(): void {
