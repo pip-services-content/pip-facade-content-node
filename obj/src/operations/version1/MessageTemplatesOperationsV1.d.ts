@@ -1,6 +1,6 @@
 import { IReferences } from 'pip-services-commons-node';
 import { FacadeOperations } from 'pip-services-facade-node';
-export declare class EmailTemplatesOperationsV1 extends FacadeOperations {
+export declare class MessageTemplatesOperationsV1 extends FacadeOperations {
     private _templatesClient;
     constructor();
     setReferences(references: IReferences): void;

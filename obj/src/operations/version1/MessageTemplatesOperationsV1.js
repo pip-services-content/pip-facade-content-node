@@ -4,14 +4,14 @@ let _ = require('lodash');
 let async = require('async');
 const pip_services_commons_node_1 = require("pip-services-commons-node");
 const pip_services_facade_node_1 = require("pip-services-facade-node");
-class EmailTemplatesOperationsV1 extends pip_services_facade_node_1.FacadeOperations {
+class MessageTemplatesOperationsV1 extends pip_services_facade_node_1.FacadeOperations {
     constructor() {
         super();
-        this._dependencyResolver.put('emailtemplates', new pip_services_commons_node_1.Descriptor('pip-services-emailtemplates', 'client', '*', '*', '1.0'));
+        this._dependencyResolver.put('msgtemplates', new pip_services_commons_node_1.Descriptor('pip-services-msgtemplates', 'client', '*', '*', '1.0'));
     }
     setReferences(references) {
         super.setReferences(references);
-        this._templatesClient = this._dependencyResolver.getOneRequired('emailtemplates');
+        this._templatesClient = this._dependencyResolver.getOneRequired('msgtemplates');
     }
     getTemplatesOperation() {
         return (req, res) => {
@@ -71,5 +71,5 @@ class EmailTemplatesOperationsV1 extends pip_services_facade_node_1.FacadeOperat
         this._templatesClient.deleteTemplateById(null, templateId, this.sendResult(req, res));
     }
 }
-exports.EmailTemplatesOperationsV1 = EmailTemplatesOperationsV1;
-//# sourceMappingURL=EmailTemplatesOperationsV1.js.map
+exports.MessageTemplatesOperationsV1 = MessageTemplatesOperationsV1;
+//# sourceMappingURL=MessageTemplatesOperationsV1.js.map

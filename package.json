@@ -12,13 +12,13 @@
     "main": "./obj/src/index.js",
     "typings": "./obj/src/index.d.ts",
     "keywords": [
-        "pip.services", 
+        "pip.services",
         "content management",
         "rest api",
         "client facade"
     ],
     "noAnalyze": true,
-    "repository" : {
+    "repository": {
         "type": "git",
         "url": "ssh://git@github.com:pip-services-content/pip-facade-content-node.git"
     },
@@ -37,7 +37,6 @@
         "pip-services-container-node": "^2.0.0",
         "pip-services-net-node": "^2.0.0",
         "pip-services-facade-node": "^1.2.0",
-
         "pip-clients-attachments-node": "git+ssh://git@github.com:pip-services-content/pip-clients-attachments-node.git",
         "pip-clients-quotes-node": "git+ssh://git@github.com:pip-services-content/pip-clients-quotes-node.git",
         "pip-clients-tags-node": "git+ssh://git@github.com:pip-services-content/pip-clients-tags-node.git",
@@ -46,7 +45,7 @@
         "pip-clients-imagesets-node": "git+ssh://git@github.com:pip-services-content/pip-clients-imagesets-node.git",
         "pip-clients-files-node": "git+ssh://git@github.com:pip-services-content/pip-clients-files-node.git",
         "pip-clients-dashboards-node": "git+ssh://git@github.com:pip-services-content/pip-clients-dashboards-node.git",
-        "pip-clients-emailtemplates-node": "git+ssh://git@github.com:pip-services-content/pip-clients-emailtemplates-node.git"
+        "pip-clients-msgtemplates-node": "git+ssh://git@github.com:pip-services-content/pip-clients-msgtemplates-node.git"
     },
     "devDependencies": {
         "@types/node": "*",
@@ -58,7 +57,6 @@
         "chai": "*",
         "matcha": "*",
         "restify": "4.3.0",
-
         "pip-services-attachments-node": "git+ssh://git@github.com:pip-services-content/pip-services-attachments-node.git",
         "pip-services-quotes-node": "git+ssh://git@github.com:pip-services-content/pip-services-quotes-node.git",
         "pip-services-tags-node": "git+ssh://git@github.com:pip-services-content/pip-services-tags-node.git",

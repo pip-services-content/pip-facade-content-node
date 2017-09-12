@@ -6,24 +6,24 @@ import { IReferences } from 'pip-services-commons-node';
 import { Descriptor } from 'pip-services-commons-node'; 
 import { DependencyResolver } from 'pip-services-commons-node';
 
-import { IEmailTemplatesClientV1 } from 'pip-clients-emailtemplates-node';
-import { EmailTemplateV1 } from 'pip-clients-emailtemplates-node';
+import { IMessageTemplatesClientV1 } from 'pip-clients-msgtemplates-node';
+import { MessageTemplateV1 } from 'pip-clients-msgtemplates-node';
 
 import { FacadeOperations } from 'pip-services-facade-node';
 
-export class EmailTemplatesOperationsV1  extends FacadeOperations {
-    private _templatesClient: IEmailTemplatesClientV1;
+export class MessageTemplatesOperationsV1  extends FacadeOperations {
+    private _templatesClient: IMessageTemplatesClientV1;
 
     public constructor() {
         super();
 
-        this._dependencyResolver.put('emailtemplates', new Descriptor('pip-services-emailtemplates', 'client', '*', '*', '1.0'));
+        this._dependencyResolver.put('msgtemplates', new Descriptor('pip-services-msgtemplates', 'client', '*', '*', '1.0'));
     }
 
     public setReferences(references: IReferences): void {
         super.setReferences(references);
 
-        this._templatesClient = this._dependencyResolver.getOneRequired<IEmailTemplatesClientV1>('emailtemplates');
+        this._templatesClient = this._dependencyResolver.getOneRequired<IMessageTemplatesClientV1>('msgtemplates');
     }
 
     public getTemplatesOperation() {
