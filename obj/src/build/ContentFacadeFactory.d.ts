@@ -9,5 +9,6 @@ export declare class ContentFacadeFactory extends Factory {
     static ImageSetsOperationsV1Descriptor: Descriptor;
     static FilesOperationsV1Descriptor: Descriptor;
     static DashboardsOperationsV1Descriptor: Descriptor;
+    static MessageTemplatesOperationsV1Descriptor: Descriptor;
     constructor();
 }
