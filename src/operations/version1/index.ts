@@ -3,6 +3,7 @@ export { QuotesOperationsV1 } from './QuotesOperationsV1';
 export { FilesOperationsV1 } from './FilesOperationsV1';
 export { TipsOperationsV1 } from './TipsOperationsV1';
 export { GuidesOperationsV1 } from './GuidesOperationsV1';
+export { HelpOperationsV1 } from './HelpOperationsV1';
 export { ImageSetsOperationsV1 } from './ImageSetsOperationsV1';
 export { MessageTemplatesOperationsV1 } from './MessageTemplatesOperationsV1';
 export { DashboardsOperationsV1 } from './DashboardsOperationsV1';

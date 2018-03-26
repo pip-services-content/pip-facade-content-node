@@ -6,6 +6,7 @@ export declare class ContentFacadeFactory extends Factory {
     static QuotesOperationsV1Descriptor: Descriptor;
     static TipsOperationsV1Descriptor: Descriptor;
     static GuidesOperationsV1Descriptor: Descriptor;
+    static HelpOperationsV1Descriptor: Descriptor;
     static ImageSetsOperationsV1Descriptor: Descriptor;
     static FilesOperationsV1Descriptor: Descriptor;
     static DashboardsOperationsV1Descriptor: Descriptor;

@@ -1,3 +1,8 @@
+<a name="1.1.0"></a> ### 1.1.0 (2018-03-25)
+
+#### Features
+* Help operations
+
 <a name="1.0.0"></a> ### 1.0.0 (2017-04-29)
 
 #### Features

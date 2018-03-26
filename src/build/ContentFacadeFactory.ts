@@ -5,6 +5,7 @@ import { TagsOperationsV1 } from '../operations/version1/TagsOperationsV1';
 import { QuotesOperationsV1 } from '../operations/version1/QuotesOperationsV1';
 import { TipsOperationsV1 } from '../operations/version1/TipsOperationsV1';
 import { GuidesOperationsV1 } from '../operations/version1/GuidesOperationsV1';
+import { HelpOperationsV1 } from '../operations/version1/HelpOperationsV1';
 import { ImageSetsOperationsV1 } from '../operations/version1/ImageSetsOperationsV1';
 import { FilesOperationsV1 } from '../operations/version1/FilesOperationsV1';
 import { DashboardsOperationsV1 } from '../operations/version1/DashboardsOperationsV1';
@@ -17,6 +18,7 @@ export class ContentFacadeFactory extends Factory {
 	public static QuotesOperationsV1Descriptor = new Descriptor("pip-facade-content", "operations", "quotes", "*", "1.0");
 	public static TipsOperationsV1Descriptor = new Descriptor("pip-facade-content", "operations", "tips", "*", "1.0");
 	public static GuidesOperationsV1Descriptor = new Descriptor("pip-facade-content", "operations", "guides", "*", "1.0");
+	public static HelpOperationsV1Descriptor = new Descriptor("pip-facade-content", "operations", "help", "*", "1.0");
 	public static ImageSetsOperationsV1Descriptor = new Descriptor("pip-facade-content", "operations", "imagesets", "*", "1.0");
 	public static FilesOperationsV1Descriptor = new Descriptor("pip-facade-content", "operations", "files", "*", "1.0");
 	public static DashboardsOperationsV1Descriptor = new Descriptor("pip-facade-content", "operations", "dashboards", "*", "1.0");
@@ -29,6 +31,7 @@ export class ContentFacadeFactory extends Factory {
 		this.registerAsType(ContentFacadeFactory.QuotesOperationsV1Descriptor, QuotesOperationsV1);
 		this.registerAsType(ContentFacadeFactory.TipsOperationsV1Descriptor, TipsOperationsV1);
 		this.registerAsType(ContentFacadeFactory.GuidesOperationsV1Descriptor, GuidesOperationsV1);
+		this.registerAsType(ContentFacadeFactory.HelpOperationsV1Descriptor, HelpOperationsV1);
 		this.registerAsType(ContentFacadeFactory.ImageSetsOperationsV1Descriptor, ImageSetsOperationsV1);
 		this.registerAsType(ContentFacadeFactory.FilesOperationsV1Descriptor, FilesOperationsV1);
 		this.registerAsType(ContentFacadeFactory.DashboardsOperationsV1Descriptor, DashboardsOperationsV1);

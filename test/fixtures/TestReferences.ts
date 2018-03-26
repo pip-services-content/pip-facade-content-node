@@ -46,6 +46,10 @@ export class TestReferences extends ManagedReferences {
         this.append(new Descriptor('pip-services-guides', 'persistence', 'memory', 'default', '*'));
         this.append(new Descriptor('pip-services-guides', 'controller', 'default', 'default', '*'));
         this.append(new Descriptor('pip-services-guides', 'client', 'direct', 'default', '*'));
+        this.append(new Descriptor('pip-services-help', 'persistence-topics', 'memory', 'default', '*'));
+        this.append(new Descriptor('pip-services-help', 'persistence-articles', 'memory', 'default', '*'));
+        this.append(new Descriptor('pip-services-help', 'controller', 'default', 'default', '*'));
+        this.append(new Descriptor('pip-services-help', 'client', 'direct', 'default', '*'));
         this.append(new Descriptor('pip-services-imagesets', 'persistence', 'memory', 'default', '*'));
         this.append(new Descriptor('pip-services-imagesets', 'controller', 'default', 'default', '*'));
         this.append(new Descriptor('pip-services-imagesets', 'client', 'direct', 'default', '*'));

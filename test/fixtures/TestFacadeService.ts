@@ -5,6 +5,7 @@ import { TagsOperationsV1 } from '../../src/operations/version1/TagsOperationsV1
 import { QuotesOperationsV1 } from '../../src/operations/version1/QuotesOperationsV1';
 import { TipsOperationsV1 } from '../../src/operations/version1/TipsOperationsV1';
 import { GuidesOperationsV1 } from '../../src/operations/version1/GuidesOperationsV1';
+import { HelpOperationsV1 } from '../../src/operations/version1/HelpOperationsV1';
 import { ImageSetsOperationsV1 } from '../../src/operations/version1/ImageSetsOperationsV1';
 import { FilesOperationsV1 } from '../../src/operations/version1/FilesOperationsV1';
 import { MessageTemplatesOperationsV1 } from '../../src/operations/version1/MessageTemplatesOperationsV1';
@@ -19,6 +20,7 @@ export class TestFacadeService extends PartitionFacadeService {
         this._dependencyResolver.put('tags', new Descriptor("pip-facade-content", "operations", "tags", "*", "1.0"));
         this._dependencyResolver.put('tips', new Descriptor("pip-facade-content", "operations", "tips", "*", "1.0"));
         this._dependencyResolver.put('guides', new Descriptor("pip-facade-content", "operations", "guides", "*", "1.0"));
+        this._dependencyResolver.put('help', new Descriptor("pip-facade-content", "operations", "help", "*", "1.0"));
         this._dependencyResolver.put('imagesets', new Descriptor("pip-facade-content", "operations", "imagesets", "*", "1.0"));
         this._dependencyResolver.put('files', new Descriptor("pip-facade-content", "operations", "files", "*", "1.0"));
         this._dependencyResolver.put('msgtemplates', new Descriptor("pip-facade-content", "operations", "msgtemplates", "*", "1.0"));
@@ -63,6 +65,22 @@ export class TestFacadeService extends PartitionFacadeService {
             this.registerRoute('del', '/guides/:guide_id', guides.deleteGuideOperation());
         }
 
+        let help = this._dependencyResolver.getOneOptional<HelpOperationsV1>('help');
+        if (help) {
+            this.registerRoute('get', '/help/topics', help.getTopicsOperation());
+            this.registerRoute('get', '/help/topics/:topic_id', help.getTopicOperation());
+            this.registerRoute('post', '/help/topics', help.createTopicOperation());
+            this.registerRoute('put', '/help/topics/:topic_id', help.updateTopicOperation());
+            this.registerRoute('del', '/help/topics/:topic_id', help.deleteTopicOperation());
+
+            this.registerRoute('get', '/help/articles', help.getArticlesOperation());
+            this.registerRoute('get', '/help/articles/random', help.getRandomArticleOperation());
+            this.registerRoute('get', '/help/articles/:article_id', help.getArticleOperation());
+            this.registerRoute('post', '/help/articles', help.createArticleOperation());
+            this.registerRoute('put', '/help/articles/:article_id', help.updateArticleOperation());
+            this.registerRoute('del', '/help/articles/:article_id', help.deleteArticleOperation());
+        }
+        
         let imagesets = this._dependencyResolver.getOneOptional<ImageSetsOperationsV1>('imagesets');
         if (imagesets) {
             this.registerRoute('get', '/imagesets', imagesets.getImageSetsOperation());
