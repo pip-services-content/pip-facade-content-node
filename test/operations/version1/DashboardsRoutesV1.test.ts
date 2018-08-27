@@ -26,7 +26,7 @@ suite('DashboardsOperationsV1', () => {
 
     test('should get and set dashboards', (done) => {
         rest.get(
-            '/api/1.0/dashboards/1/test/default',
+            '/api/v1/dashboards/1/test/default',
             (err, req, res, dashboard) => {
                 assert.isNull(err);
 
@@ -36,7 +36,7 @@ suite('DashboardsOperationsV1', () => {
                 assert.equal(dashboard.kind, 'default');
 
                 rest.post(
-                    '/api/1.0/dashboards/1/test/default',
+                    '/api/v1/dashboards/1/test/default',
                     dashboard,
                     (err, req, res, dashboard1) => {
                         assert.isNull(err);
@@ -56,7 +56,7 @@ suite('DashboardsOperationsV1', () => {
 
     test('should get dashboards', (done) => {
         rest.get(
-            '/api/1.0/dashboards?paging=1&skip=0&take=2',
+            '/api/v1/dashboards?paging=1&skip=0&take=2',
             (err, req, res, page) => {
                 assert.isNull(err);
 
@@ -69,7 +69,7 @@ suite('DashboardsOperationsV1', () => {
 
     test('should delete dashboards', (done) => {
         rest.del(
-            '/api/1.0/dashboards?user_id=1',
+            '/api/v1/dashboards?user_id=1',
             (err, req, res) => {
                 assert.isNull(err);
 
