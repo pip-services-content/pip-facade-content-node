@@ -1,5 +1,5 @@
-import { Descriptor } from 'pip-services-commons-node';
-import { PartitionFacadeService } from 'pip-services-facade-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { PartitionFacadeService } from 'pip-services3-facade-node';
 
 import { TagsOperationsV1 } from '../../src/operations/version1/TagsOperationsV1';
 import { QuotesOperationsV1 } from '../../src/operations/version1/QuotesOperationsV1';

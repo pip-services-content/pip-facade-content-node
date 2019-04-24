@@ -1,5 +1,5 @@
-import { IReferences } from 'pip-services-commons-node';
-import { FacadeOperations } from 'pip-services-facade-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { FacadeOperations } from 'pip-services3-facade-node';
 export declare class TipsOperationsV1 extends FacadeOperations {
     private _tipsClient;
     constructor();
@@ -10,10 +10,10 @@ export declare class TipsOperationsV1 extends FacadeOperations {
     createTipOperation(): (req: any, res: any) => void;
     updateTipOperation(): (req: any, res: any) => void;
     deleteTipOperation(): (req: any, res: any) => void;
-    private getTips(req, res);
-    private getRandomTip(req, res);
-    private getTip(req, res);
-    private createTip(req, res);
-    private updateTip(req, res);
-    private deleteTip(req, res);
+    private getTips;
+    private getRandomTip;
+    private getTip;
+    private createTip;
+    private updateTip;
+    private deleteTip;
 }

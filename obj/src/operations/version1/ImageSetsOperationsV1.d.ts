@@ -1,5 +1,5 @@
-import { IReferences } from 'pip-services-commons-node';
-import { FacadeOperations } from 'pip-services-facade-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { FacadeOperations } from 'pip-services3-facade-node';
 export declare class ImageSetsOperationsV1 extends FacadeOperations {
     private _imagesetsClient;
     constructor();
@@ -9,9 +9,9 @@ export declare class ImageSetsOperationsV1 extends FacadeOperations {
     createImageSetOperation(): (req: any, res: any) => void;
     updateImageSetOperation(): (req: any, res: any) => void;
     deleteImageSetOperation(): (req: any, res: any) => void;
-    private getImageSets(req, res);
-    private getImageSet(req, res);
-    private createImageSet(req, res);
-    private updateImageSet(req, res);
-    private deleteImageSet(req, res);
+    private getImageSets;
+    private getImageSet;
+    private createImageSet;
+    private updateImageSet;
+    private deleteImageSet;
 }

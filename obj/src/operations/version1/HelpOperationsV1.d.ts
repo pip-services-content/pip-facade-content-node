@@ -1,5 +1,5 @@
-import { IReferences } from 'pip-services-commons-node';
-import { FacadeOperations } from 'pip-services-facade-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { FacadeOperations } from 'pip-services3-facade-node';
 export declare class HelpOperationsV1 extends FacadeOperations {
     private _helpClient;
     constructor();
@@ -15,15 +15,15 @@ export declare class HelpOperationsV1 extends FacadeOperations {
     createArticleOperation(): (req: any, res: any) => void;
     updateArticleOperation(): (req: any, res: any) => void;
     deleteArticleOperation(): (req: any, res: any) => void;
-    private getTopics(req, res);
-    private getTopic(req, res);
-    private createTopic(req, res);
-    private updateTopic(req, res);
-    private deleteTopic(req, res);
-    private getArticles(req, res);
-    private getRandomArticle(req, res);
-    private getArticle(req, res);
-    private createArticle(req, res);
-    private updateArticle(req, res);
-    private deleteArticle(req, res);
+    private getTopics;
+    private getTopic;
+    private createTopic;
+    private updateTopic;
+    private deleteTopic;
+    private getArticles;
+    private getRandomArticle;
+    private getArticle;
+    private createArticle;
+    private updateArticle;
+    private deleteArticle;
 }

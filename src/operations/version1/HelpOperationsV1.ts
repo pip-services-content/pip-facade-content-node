@@ -1,16 +1,16 @@
 let _ = require('lodash');
 let async = require('async');
 
-import { ConfigParams } from 'pip-services-commons-node';
-import { IReferences } from 'pip-services-commons-node';
-import { Descriptor } from 'pip-services-commons-node'; 
-import { DependencyResolver } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { Descriptor } from 'pip-services3-commons-node'; 
+import { DependencyResolver } from 'pip-services3-commons-node';
 
 import { IHelpClientV1 } from 'pip-clients-help-node';
 import { HelpTopicV1 } from 'pip-clients-help-node';
 import { HelpArticleV1 } from 'pip-clients-help-node';
 
-import { FacadeOperations } from 'pip-services-facade-node';
+import { FacadeOperations } from 'pip-services3-facade-node';
 
 export class HelpOperationsV1  extends FacadeOperations {
     private _helpClient: IHelpClientV1;
