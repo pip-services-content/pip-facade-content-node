@@ -9,9 +9,9 @@ export declare class ImageSetsOperationsV1 extends FacadeOperations {
     createImageSetOperation(): (req: any, res: any) => void;
     updateImageSetOperation(): (req: any, res: any) => void;
     deleteImageSetOperation(): (req: any, res: any) => void;
-    private getImageSets;
-    private getImageSet;
-    private createImageSet;
-    private updateImageSet;
-    private deleteImageSet;
+    private getImageSets(req, res);
+    private getImageSet(req, res);
+    private createImageSet(req, res);
+    private updateImageSet(req, res);
+    private deleteImageSet(req, res);
 }

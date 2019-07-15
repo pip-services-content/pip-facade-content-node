@@ -10,10 +10,10 @@ export declare class MessageTemplatesOperationsV1 extends FacadeOperations {
     createTemplateOperation(): (req: any, res: any) => void;
     updateTemplateOperation(): (req: any, res: any) => void;
     deleteTemplateOperation(): (req: any, res: any) => void;
-    private getTemplates;
-    private getTemplate;
-    private findTemplate;
-    private createTemplate;
-    private updateTemplate;
-    private deleteTemplate;
+    private getTemplates(req, res);
+    private getTemplate(req, res);
+    private findTemplate(req, res);
+    private createTemplate(req, res);
+    private updateTemplate(req, res);
+    private deleteTemplate(req, res);
 }

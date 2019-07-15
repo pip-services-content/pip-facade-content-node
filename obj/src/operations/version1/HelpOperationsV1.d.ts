@@ -15,15 +15,15 @@ export declare class HelpOperationsV1 extends FacadeOperations {
     createArticleOperation(): (req: any, res: any) => void;
     updateArticleOperation(): (req: any, res: any) => void;
     deleteArticleOperation(): (req: any, res: any) => void;
-    private getTopics;
-    private getTopic;
-    private createTopic;
-    private updateTopic;
-    private deleteTopic;
-    private getArticles;
-    private getRandomArticle;
-    private getArticle;
-    private createArticle;
-    private updateArticle;
-    private deleteArticle;
+    private getTopics(req, res);
+    private getTopic(req, res);
+    private createTopic(req, res);
+    private updateTopic(req, res);
+    private deleteTopic(req, res);
+    private getArticles(req, res);
+    private getRandomArticle(req, res);
+    private getArticle(req, res);
+    private createArticle(req, res);
+    private updateArticle(req, res);
+    private deleteArticle(req, res);
 }

@@ -10,10 +10,10 @@ export declare class FilesOperationsV1 extends FacadeOperations {
     createFileOperation(): (req: any, res: any) => void;
     updateFileOperation(): (req: any, res: any) => void;
     deleteFileOperation(): (req: any, res: any) => void;
-    private getFileGroups;
-    private getFiles;
-    private getFile;
-    private createFile;
-    private updateFile;
-    private deleteFile;
+    private getFileGroups(req, res);
+    private getFiles(req, res);
+    private getFile(req, res);
+    private createFile(req, res);
+    private updateFile(req, res);
+    private deleteFile(req, res);
 }

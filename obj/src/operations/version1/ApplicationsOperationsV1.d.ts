@@ -9,9 +9,9 @@ export declare class ApplicationsOperationsV1 extends FacadeOperations {
     createApplicationOperation(): (req: any, res: any) => void;
     updateApplicationOperation(): (req: any, res: any) => void;
     deleteApplicationOperation(): (req: any, res: any) => void;
-    private getApplications;
-    private getApplication;
-    private createApplication;
-    private updateApplication;
-    private deleteApplication;
+    private getApplications(req, res);
+    private getApplication(req, res);
+    private createApplication(req, res);
+    private updateApplication(req, res);
+    private deleteApplication(req, res);
 }

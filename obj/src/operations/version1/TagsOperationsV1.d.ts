@@ -7,7 +7,7 @@ export declare class TagsOperationsV1 extends FacadeOperations {
     getTagsOperation(): (req: any, res: any) => void;
     setTagsOperation(): (req: any, res: any) => void;
     recordTagsOperation(): (req: any, res: any) => void;
-    private getTags;
-    private setTags;
-    private recordTags;
+    private getTags(req, res);
+    private setTags(req, res);
+    private recordTags(req, res);
 }

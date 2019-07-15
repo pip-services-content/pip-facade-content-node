@@ -10,10 +10,10 @@ export declare class TipsOperationsV1 extends FacadeOperations {
     createTipOperation(): (req: any, res: any) => void;
     updateTipOperation(): (req: any, res: any) => void;
     deleteTipOperation(): (req: any, res: any) => void;
-    private getTips;
-    private getRandomTip;
-    private getTip;
-    private createTip;
-    private updateTip;
-    private deleteTip;
+    private getTips(req, res);
+    private getRandomTip(req, res);
+    private getTip(req, res);
+    private createTip(req, res);
+    private updateTip(req, res);
+    private deleteTip(req, res);
 }

@@ -10,10 +10,10 @@ export declare class QuotesOperationsV1 extends FacadeOperations {
     createQuoteOperation(): (req: any, res: any) => void;
     updateQuoteOperation(): (req: any, res: any) => void;
     deleteQuoteOperation(): (req: any, res: any) => void;
-    private getQuotes;
-    private getRandomQuote;
-    private getQuote;
-    private createQuote;
-    private updateQuote;
-    private deleteQuote;
+    private getQuotes(req, res);
+    private getRandomQuote(req, res);
+    private getQuote(req, res);
+    private createQuote(req, res);
+    private updateQuote(req, res);
+    private deleteQuote(req, res);
 }
